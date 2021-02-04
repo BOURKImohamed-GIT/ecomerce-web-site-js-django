@@ -1,0 +1,39 @@
+{% extends 'store/main.html'  %}
+{%  load static   %}
+{%  block content  %}
+
+<div class="row">
+    <h4 style="position: relative;
+     display: inline-block;
+     font-size: 4em;
+     text-transform: uppercase;
+     color: #FF8C00;
+     text-shadow: 3px 3px 0px #e7eef1, 8px 8px 0px rgba(0, 0, 0, 0.1);">Para-Médicale Alwaha</h4>
+<!--   <img  height="80px"   src="{% static 'images/pik.png' %}">-->
+     <a href="{% url 'cart' %}">
+        <img  height="100px"   src="{% static 'images/ka.png' %}"></a>
+    <p id="cart-total">{{cartItems}}</p>
+
+    {% for product in products %}
+
+    <div class="col-lg-4">
+
+        <img class="thumbnail"  src= "{{product.imageURL}}">
+        <div class="box-element product">
+        <h6><strong>{{product.name}}</strong></h6>
+        <hr>
+        <button data-product= {{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart update-cart" >أضف</button>
+        <button class="btn btn-outline-success"> <a  href="#">أنضر</a></button>
+        <h4  style="display:inline-block;float:right"><strong style="color:green">${{product.price|floatformat:2}}</strong></h4>
+            <hr>
+            <div>
+             <hp>{{product.description}}</hp>
+
+            </div>
+
+         </div>
+    </div>
+
+    {% endfor  %}
+</div>
+{% endblock content  %}

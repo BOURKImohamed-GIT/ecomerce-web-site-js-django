@@ -1,0 +1,81 @@
+{% extends 'store/main.html'  %}
+{%  load static   %}
+{%  block content  %}
+<div class="row">
+    <h4 style="position: relative;
+     display: inline-block;
+     font-size: 4em;
+     text-transform: uppercase;
+     color: #FF8C00;
+     text-shadow: 3px 3px 0px #e7eef1, 8px 8px 0px rgba(0, 0, 0, 0.1);">Para-Pharmacie Alwaha</h4>
+    <a href="{% url 'cart' %}">
+        <img  height="100px"   src="{% static 'images/ka.png' %}"></a>
+    <p id="cart-total">{{cartItems}}</p>
+    <hr>
+    {% for product in products %}
+    <hr>
+    <div class="col-lg-4">
+
+        <img class="thumbnail"  src= "{{product.imageURL}}">
+        <div class="box-element product">
+        <h6><strong>{{product.name}}</strong></h6>
+        <hr>
+        <button data-product= {{product.id}} data-action="add" class="btn btn-outline-secondary add-btn update-cart update-cart" >Add to cart</button>
+         <a class="btn btn-outline-success" href="#" >View</a>
+<hr>
+
+        <h6 style="color:red;"><strike>prix avant : ${{product.priceavant}}</strike></h6>
+
+       <h4 style="display:inline-block;"> <strong style="color:green;">${{product.price|floatformat:2}}</strong> </h4>
+<hr>
+            <div>
+             <hp>{{product.description}}</hp>
+
+            </div>
+         </div>
+
+
+    </div>
+
+
+    {% endfor  %}
+</div>
+
+<hr>
+<br>
+<!--------
+<div id="bim" >
+    {% for product in products %}
+    <div>
+
+
+
+        <div class="box-element product"  >
+
+
+        <hr>
+            <div style="background-color:green;height:50px;" >
+        <h3 style="color:red;"><strong>{{product.name}}</strong></h3>
+            </div>
+        <hr>
+            <div >
+             <h3 >{{product.seed}}</h3>
+
+            </div>
+            <img   style="width:300px;height:300px" src="{{product.imageURL}}">
+            <img   style="width:300px;height:300px" src="{{product.profileURL}}">
+
+
+         </div>
+
+
+    </div>
+
+
+    {% endfor  %}
+</div>
+----->
+
+{% endblock content  %}
+
+

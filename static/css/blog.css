@@ -1,0 +1,16 @@
+.blog{
+
+position: relative;
+display: inline-block;
+font-size: 3em;
+text-transform: uppercase;
+color: #00b3b4;
+text-shadow: 3px 3px 0px #e7eef1, 8px 8px 0px rgba(0, 0, 0, 0.1);
+
+}
+.blog1{
+width:400px;height:400px;border-radius:35px 2% / 20px 35em  30px 35em;
+
+
+
+}
